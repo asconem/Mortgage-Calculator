@@ -17,6 +17,10 @@ public class Main {
         double annualInterestRate = sc.nextDouble()/PERCENT;
         double monthlyInterestRate = annualInterestRate/MONTHS_IN_YEAR;
 
+        System.out.println("Period (Years): ");
+        int years = sc.nextInt();
+        int numberOfPayments = years * MONTHS_IN_YEAR;
+
     }
 
 }
