@@ -23,6 +23,7 @@ public class Main {
 
         double topHalfOfEquation = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
         double bottomHalfOfEquation = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
+        double mortgagePayment = principal * (topHalfOfEquation/bottomHalfOfEquation);
 
     }
 
