@@ -21,6 +21,9 @@ public class Main {
         int years = sc.nextInt();
         int numberOfPayments = years * MONTHS_IN_YEAR;
 
+        double topHalfOfEquation = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
+        double bottomHalfOfEquation = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
+
     }
 
 }
