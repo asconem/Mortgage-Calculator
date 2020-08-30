@@ -13,6 +13,9 @@ public class Main {
         System.out.println("Principal: ");
         int principal = sc.nextInt();
 
+        System.out.println("Annual Interest Rate: ");
+        double annualInterestRate = sc.nextDouble()/PERCENT;
+        double monthlyInterestRate = annualInterestRate/MONTHS_IN_YEAR;
 
     }
 
