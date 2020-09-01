@@ -8,18 +8,24 @@ public class Main {
     public static void main(String[] args) {
         final byte MONTHS_IN_YEAR = 12;
         final byte PERCENT = 100;
+        int principal = 0;
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Principal ($1K - $1M): ");
-        int principal = sc.nextInt();
-        while (principal < 1000 || principal > 10000000) {
-            System.out.print("Please enter a number between 1,000 and 1,000,000: ");
+        while (true){
+            System.out.print("Principal ($1K - $1M): ");
             principal = sc.nextInt();
+            if (principal >= 1000 && principal <= 1000000)
+                break;
+            System.out.println("Enter a value between 1,000 and 1,000,000");
         }
 
         System.out.print("Annual Interest Rate: ");
         double annualInterestRate = sc.nextDouble()/PERCENT;
+        while (annualInterestRate <= 0.0 || annualInterestRate > 30.0){
+            System.out.print("Please enter a number greater than 0 and less than or equal to 30: ");
+            annualInterestRate = sc.nextDouble()/PERCENT;
+        }
         double monthlyInterestRate = annualInterestRate/MONTHS_IN_YEAR;
 
         System.out.print("Period (Years): ");
