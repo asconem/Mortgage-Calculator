@@ -11,6 +11,7 @@ public class Main {
 
         int principal = 0;
         double monthlyInterestRate = 0;
+        int numberOfPayments = 0;
 
         Scanner sc = new Scanner(System.in);
 
@@ -19,7 +20,7 @@ public class Main {
             principal = sc.nextInt();
             if (principal >= 1000 && principal <= 1000000)
                 break;
-            System.out.println("Please enter a value between 1,000 and 1,000,000.");
+            System.out.print("Please enter a value between 1,000 and 1,000,000: ");
         }
 
         while (true) {
@@ -29,13 +30,19 @@ public class Main {
                 monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
                 break;
             }
-            System.out.println("Please enter a value between 1 and 30.");
+            System.out.print("Please enter a value between 1 and 30: ");
 
         }
 
-        System.out.print("Period (Years): ");
-        int years = sc.nextInt();
-        int numberOfPayments = years * MONTHS_IN_YEAR;
+        while (true) {
+            System.out.print("Period (Years): ");
+            int years = sc.nextInt();
+            if (years >= 1 && years <= 30){
+                numberOfPayments = years * MONTHS_IN_YEAR;
+                break;
+            }
+            System.out.print("Please enter a value between 1 and 30: ");
+        }
 
         double topHalfOfEquation = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
         double bottomHalfOfEquation = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
