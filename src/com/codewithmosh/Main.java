@@ -8,7 +8,9 @@ public class Main {
     public static void main(String[] args) {
         final byte MONTHS_IN_YEAR = 12;
         final byte PERCENT = 100;
+
         int principal = 0;
+        double monthlyInterestRate = 0;
 
         Scanner sc = new Scanner(System.in);
 
@@ -17,16 +19,19 @@ public class Main {
             principal = sc.nextInt();
             if (principal >= 1000 && principal <= 1000000)
                 break;
-            System.out.println("Enter a value between 1,000 and 1,000,000");
+            System.out.println("Enter a value between 1,000 and 1,000,000.");
         }
 
-        System.out.print("Annual Interest Rate: ");
-        double annualInterestRate = sc.nextDouble()/PERCENT;
-        while (annualInterestRate <= 0.0 || annualInterestRate > 30.0){
-            System.out.print("Please enter a number greater than 0 and less than or equal to 30: ");
-            annualInterestRate = sc.nextDouble()/PERCENT;
+        while (true) {
+            System.out.print("Annual Interest Rate: ");
+            double annualInterestRate = sc.nextDouble() / PERCENT;
+            if (annualInterestRate >= 1 && annualInterestRate <= 30) {
+                monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
+                break;
+            }
+            System.out.println("Enter a value between 1 and 30.");
+
         }
-        double monthlyInterestRate = annualInterestRate/MONTHS_IN_YEAR;
 
         System.out.print("Period (Years): ");
         int years = sc.nextInt();
