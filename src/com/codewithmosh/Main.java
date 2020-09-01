@@ -19,7 +19,7 @@ public class Main {
             principal = sc.nextInt();
             if (principal >= 1000 && principal <= 1000000)
                 break;
-            System.out.println("Enter a value between 1,000 and 1,000,000.");
+            System.out.println("Please enter a value between 1,000 and 1,000,000.");
         }
 
         while (true) {
@@ -29,7 +29,7 @@ public class Main {
                 monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
                 break;
             }
-            System.out.println("Enter a value between 1 and 30.");
+            System.out.println("Please enter a value between 1 and 30.");
 
         }
 
