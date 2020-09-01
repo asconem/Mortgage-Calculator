@@ -20,17 +20,17 @@ public class Main {
             principal = sc.nextInt();
             if (principal >= 1000 && principal <= 1000000)
                 break;
-            System.out.print("Please enter a value between 1,000 and 1,000,000: ");
+            System.out.println("Please enter a value between 1,000 and 1,000,000: ");
         }
 
         while (true) {
             System.out.print("Annual Interest Rate: ");
-            double annualInterestRate = sc.nextDouble() / PERCENT;
+            double annualInterestRate = sc.nextDouble();
             if (annualInterestRate >= 1 && annualInterestRate <= 30) {
-                monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
+                monthlyInterestRate = annualInterestRate/PERCENT/MONTHS_IN_YEAR;
                 break;
             }
-            System.out.print("Please enter a value between 1 and 30: ");
+            System.out.println("Please enter a value between 1 and 30: ");
 
         }
 
@@ -49,7 +49,7 @@ public class Main {
         double mortgagePayment = principal * (topHalfOfEquation/bottomHalfOfEquation);
 
         String formattedMortgagePayment = NumberFormat.getCurrencyInstance().format(mortgagePayment);
-        System.out.print("Monthly Mortgage Payment: " + formattedMortgagePayment);
+        System.out.println("Monthly Mortgage Payment: " + formattedMortgagePayment);
 
     }
 
