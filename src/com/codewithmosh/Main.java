@@ -11,8 +11,12 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Principal: ");
+        System.out.print("Principal ($1K - $1M): ");
         int principal = sc.nextInt();
+        while (principal < 1000 || principal > 10000000) {
+            System.out.print("Please enter a number between 1,000 and 1,000,000: ");
+            principal = sc.nextInt();
+        }
 
         System.out.print("Annual Interest Rate: ");
         double annualInterestRate = sc.nextDouble()/PERCENT;
