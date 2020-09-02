@@ -10,7 +10,7 @@ public class Main {
         final byte PERCENT = 100;
 
         int principal = 0;
-        double monthlyInterestRate = 0;
+        float monthlyInterestRate = 0;
         int numberOfPayments = 0;
 
         System.out.println(greetUser("John", "Smith"));
@@ -27,7 +27,7 @@ public class Main {
 
         while (true) {
             System.out.print("Annual Interest Rate: ");
-            double annualInterestRate = sc.nextDouble();
+            float annualInterestRate = sc.nextFloat();
             if (annualInterestRate >= 1 && annualInterestRate <= 30) {
                 monthlyInterestRate = annualInterestRate/PERCENT/MONTHS_IN_YEAR;
                 break;
@@ -38,7 +38,7 @@ public class Main {
 
         while (true) {
             System.out.print("Period (Years): ");
-            int years = sc.nextInt();
+            byte years = sc.nextByte();
             if (years >= 1 && years <= 30){
                 numberOfPayments = years * MONTHS_IN_YEAR;
                 break;
@@ -58,5 +58,7 @@ public class Main {
     public static String greetUser(String firstName, String lastName) {
         return "Hello " + firstName + " " + lastName + ". Welcome to the Mortgage Calculator.";
     }
+
+
 
 }
