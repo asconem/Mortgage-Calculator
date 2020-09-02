@@ -13,6 +13,8 @@ public class Main {
         double monthlyInterestRate = 0;
         int numberOfPayments = 0;
 
+        System.out.println(greetUser("John", "Smith"));
+
         Scanner sc = new Scanner(System.in);
 
         while (true){
@@ -51,6 +53,10 @@ public class Main {
         String formattedMortgagePayment = NumberFormat.getCurrencyInstance().format(mortgagePayment);
         System.out.println("Monthly Mortgage Payment: " + formattedMortgagePayment);
 
+    }
+
+    public static String greetUser(String firstName, String lastName) {
+        return "Hello " + firstName + " " + lastName + ". Welcome to the Mortgage Calculator.";
     }
 
 }
