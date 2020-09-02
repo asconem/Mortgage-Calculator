@@ -46,11 +46,11 @@ public class Main {
             System.out.print("Please enter a value between 1 and 30: ");
         }
 
-        double topHalfOfEquation = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
-        double bottomHalfOfEquation = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
-        double mortgagePayment = principal * (topHalfOfEquation/bottomHalfOfEquation);
+        double mortgage = principal
+                * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
+                / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
 
-        String formattedMortgagePayment = NumberFormat.getCurrencyInstance().format(mortgagePayment);
+        String formattedMortgagePayment = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Monthly Mortgage Payment: " + formattedMortgagePayment);
 
     }
