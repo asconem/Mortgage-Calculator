@@ -19,6 +19,9 @@ public class Main {
         System.out.println("MORTGAGE");
         System.out.println("--------");
         System.out.println("Monthly Payments: " + formattedMortgagePayment);
+        System.out.println(" ");
+        System.out.println("PAYMENT SCHEDULE");
+        System.out.println("----------------");
 
     }
 
