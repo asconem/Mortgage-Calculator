@@ -15,7 +15,10 @@ public class Main {
         double mortgage = calculateMortgage(principal, annualInterestRate, years);
 
         String formattedMortgagePayment = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Monthly Mortgage Payment: " + formattedMortgagePayment);
+        System.out.println(" ");
+        System.out.println("MORTGAGE");
+        System.out.println("--------");
+        System.out.println("Monthly Payments: " + formattedMortgagePayment);
 
     }
 
