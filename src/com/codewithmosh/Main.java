@@ -15,15 +15,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         principal = (int) readNumber("Principal: ", 1000, 1_000_000);
-
-        while (true) {
-            System.out.print("Annual Interest Rate: ");
-            annualInterestRate = sc.nextFloat();
-            if (annualInterestRate >= 1 && annualInterestRate <= 30)
-                break;
-
-            System.out.println("Please enter a value between 1 and 30: ");
-        }
+        annualInterestRate = (float) readNumber("Annual interest rate: ", 1, 30);
 
         while (true) {
             System.out.print("Period (Years): ");
