@@ -6,25 +6,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int principal = 0;
-        float annualInterestRate = 0;
-        byte years = 0;
-
         System.out.println(greetUser("John", "Smith"));
 
-        Scanner sc = new Scanner(System.in);
-
-        principal = (int) readNumber("Principal: ", 1000, 1_000_000);
-        annualInterestRate = (float) readNumber("Annual interest rate: ", 1, 30);
-
-        while (true) {
-            System.out.print("Period (Years): ");
-            years = sc.nextByte();
-            if (years >= 1 && years <= 30)
-                break;
-
-            System.out.print("Please enter a value between 1 and 30: ");
-        }
+        int principal = (int) readNumber("Principal: ", 1000, 1_000_000);
+        float annualInterestRate = (float) readNumber("Annual interest rate: ", 1, 30);
+        byte years = (byte) readNumber("Period (Years): ", 1, 30);
 
         double mortgage = calculateMortgage(principal, annualInterestRate, years);
 
