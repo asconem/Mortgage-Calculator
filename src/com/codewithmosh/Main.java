@@ -14,13 +14,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        while (true){
-            System.out.print("Principal ($1K - $1M): ");
-            principal = sc.nextInt();
-            if (principal >= 1000 && principal <= 1000000)
-                break;
-            System.out.println("Please enter a value between 1,000 and 1,000,000: ");
-        }
+        principal = (int) readNumber("Principal: ", 1000, 1_000_000);
 
         while (true) {
             System.out.print("Annual Interest Rate: ");
