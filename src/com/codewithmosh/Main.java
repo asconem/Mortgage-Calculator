@@ -29,7 +29,6 @@ public class Main {
                 break;
 
             System.out.println("Please enter a value between 1 and 30: ");
-
         }
 
         while (true) {
@@ -50,6 +49,19 @@ public class Main {
 
     public static String greetUser(String firstName, String lastName) {
         return "Hello " + firstName + " " + lastName + ". Welcome to the Mortgage Calculator.";
+    }
+
+    public static double readNumber(String prompt, double min, double max) {
+        Scanner sc = new Scanner(System.in);
+        double value;
+        while (true) {
+            System.out.print(prompt);
+            value = sc.nextFloat();
+            if (value >= min && value <= max)
+                break;
+            System.out.println("Enter a value between " + min + " and " + max + ".");
+        }
+        return value;
     }
 
     public static double calculateMortgage(
